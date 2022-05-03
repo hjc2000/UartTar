@@ -3,7 +3,7 @@
 
 #include <stdint.h>
 #include <list>
-#include <CircularQueue.h>
+#include "CircularQueue.h"
 #include <functional>
 #include <Delegate.h>
 using namespace std;
