@@ -5,7 +5,6 @@
 #include <list>
 #include "CircularQueue.h"
 #include <functional>
-#include "Delegate.h"
 using namespace std;
 
 class UartTar
