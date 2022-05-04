@@ -2,9 +2,6 @@
 #define UartTar_h
 
 #include <stdint.h>
-#include <list>
-#include "CircularQueue.h"
-#include <functional>
 using namespace std;
 
 class UartTar
