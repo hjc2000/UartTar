@@ -114,7 +114,7 @@ void UartTar::PushData(uint8_t data)
 
 void UartTar::sendData(uint16_t funCode, const uint8_t *buff, uint16_t size)
 {
-    PushFrameHeader(size);
+    PushFrameHeader(size + 1);
     PushData(funCode);
     for (size_t i = 0; i < size; i++)
     {
