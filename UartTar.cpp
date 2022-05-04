@@ -47,7 +47,8 @@ void UartTar::GetData(void)
         {
             /*已经收集到一个帧了*/
             OnReceive(m_readBuff);
-            m_flag = 0; //回到等待帧头的状态
+            m_readBuff.clear(); //清空队列
+            m_flag = 0;         //回到等待帧头的状态
         }
     }
 }
