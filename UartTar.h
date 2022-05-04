@@ -10,7 +10,7 @@ class UartTar
 public:
     UartTar(HardwareSerial *pSerial);
     //向串口发送数据
-    void sendData(const uint8_t *buff, uint16_t size);
+    void sendData(uint16_t funCode, const uint8_t *buff, uint16_t size);
     void loop(void);
 
 protected:
