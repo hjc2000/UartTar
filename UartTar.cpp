@@ -112,13 +112,23 @@ void UartTar::PushData(uint8_t data)
     }
 }
 
-void UartTar::sendData(uint16_t funCode, const uint8_t *buff, uint16_t size)
+void UartTar::sendData(uint16_t funCode, const uint8_t *data, uint16_t size)
 {
     PushFrameHeader(size + 1);
     PushData(funCode);
     for (size_t i = 0; i < size; i++)
     {
-        PushData(buff[i]);
+        PushData(data[i]);
+    }
+}
+
+void UartTar::sendData(uint16_t funCode, vector<uint8_t> &data)
+{
+    if (!data.empty()) //不为空
+    {
+        auto it = data.begin();
+        uint8_t *pData = &(*it);
+        sendData(funCode, pData, data.size());
     }
 }
 

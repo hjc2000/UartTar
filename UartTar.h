@@ -2,6 +2,7 @@
 #define UartTar_h
 
 #include <stdint.h>
+#include <vector>
 #include "Queue.h"
 using namespace std;
 
@@ -10,7 +11,8 @@ class UartTar
 public:
     UartTar(HardwareSerial *pSerial);
     //向串口发送数据
-    void sendData(uint16_t funCode, const uint8_t *buff, uint16_t size);
+    void sendData(uint16_t funCode, const uint8_t *data, uint16_t size);
+    void sendData(uint16_t funCode, vector<uint8_t> &data);
     void loop(void);
 
 protected:
